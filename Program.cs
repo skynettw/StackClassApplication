@@ -65,6 +65,7 @@ namespace MyAppClassTest1
                                 result = x + y;
                                 stack.Push(Convert.ToString(result));
                                 Console.WriteLine(result);
+                                stack.Show();
                                 break;
                             case '-':
                                 x = Convert.ToInt32(stack.Pop());
@@ -72,6 +73,7 @@ namespace MyAppClassTest1
                                 result = x - y;
                                 stack.Push(Convert.ToString(result));
                                 Console.WriteLine(x - y);
+                                stack.Show();
                                 break;
                             case '*':
                                 x = Convert.ToInt32(stack.Pop());
@@ -79,6 +81,7 @@ namespace MyAppClassTest1
                                 result = x * y;
                                 stack.Push(Convert.ToString(result));
                                 Console.WriteLine(x * y);
+                                stack.Show();
                                 break;
                             case '/':
                                 x = Convert.ToInt32(stack.Pop());
@@ -86,9 +89,10 @@ namespace MyAppClassTest1
                                 result = (int) ((double) x / (double) y);
                                 stack.Push(Convert.ToString(result));
                                 Console.WriteLine(result);
+                                stack.Show();
                                 break;
                             default:
-                                var isNumeric = int.TryParse(cmd, out _); ;
+                                bool isNumeric = int.TryParse(cmd, out _); 
                                 if (isNumeric)
                                     stack.Push(cmd);
                                 break;
@@ -96,7 +100,7 @@ namespace MyAppClassTest1
                     }
                     else
                     {
-                        var isNumeric = int.TryParse(cmd, out _); ;
+                        bool isNumeric = int.TryParse(cmd, out _); 
                         if (isNumeric) 
                             stack.Push(cmd);
                     }

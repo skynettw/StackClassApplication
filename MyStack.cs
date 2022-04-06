@@ -19,11 +19,19 @@ namespace MyAppClassTest1
 
         public void Show()
         {
-            for (int i=0; i<top; i++)
+            if (this.top == 0)
             {
-                Console.Write(buf[i]+",");
+                Console.WriteLine("Empty");
+            } else
+            {
+                int i;
+                for (i = 0; i < top - 1; i++)
+                {
+                    Console.Write(buf[i] + ",");
+                }
+                Console.WriteLine("{0}<-top", buf[i]);
+
             }
-            Console.WriteLine();   
         }
                 
         public string Pop()
