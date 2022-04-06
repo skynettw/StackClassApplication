@@ -87,6 +87,11 @@ namespace MyAppClassTest1
                                 stack.Push(Convert.ToString(result));
                                 Console.WriteLine(result);
                                 break;
+                            default:
+                                var isNumeric = int.TryParse(cmd, out _); ;
+                                if (isNumeric)
+                                    stack.Push(cmd);
+                                break;
                         }
                     }
                     else
